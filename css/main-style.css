@@ -18,12 +18,14 @@
     font-style: normal;
 }
 
-h1{
+
+
+/* 태그이름을 통한 css디자인 */
+h1 {
     font-size: 2.5rem;
     font-family: 'HS-Regular';
 }
-
-section {
+section { 
     max-width: 1000px;
     box-sizing: border-box;
     margin: auto;
@@ -31,60 +33,73 @@ section {
 
 /* 클래스 이름을 통한 css디자인 */
 /* header의 nav */
-
-.header{
-    position: fixed;
+.header { 
+    position: fixed; 
     background-color: #2D3192cc;
     width: 100%;
     color: white;
     z-index: 100;
 }
-
 .header>.nav {
-    max-width: 1000px;
+    max-width:1000px;
     box-sizing: border-box;
     margin: auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 20px;
-}
-
-.header>.nav>.nav-title{
-    width: 170px;
-    font-size: 1.5rem;
-    text-align: center;
-    font-family: 'PyeongChangPeace-Bold';
+    align-items: center;
+    padding: 24px 20px;
 }
 .header>.nav>.nav-menu {
     display: flex;
-    /* width라는 정확한 너비 크기가 안 주어지면
-    justify-content는 벌어져야할 공간의 비율을 만들 수가 없기에
-    아무 영향이 없다. 그러니 반드시 너비 크기를 지정!*/
     width: 40%;
     justify-content: space-evenly;
-    align-items: center;
+}
+.header>.nav>.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-family: 'TAEBAEKmilkyway';
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.header>.nav>.nav-menu a::after {
+    content: "";
+    display: inline-block;
+    width: 0; height: 4px;
+    background-color: #FFFF08;
+    position: absolute;
+    bottom: 0;
+    margin-left: -74px;
+}
+.header>.nav>.nav-menu a:hover:after {
+    width: 80px;
+    transition: all 0.5s;
 }
 
-.header>.nav>.nav-menu a{
-    text-decoration: none;
+.header>.nav>.nav-menu a:hover {
+    color: #FFFF08;
+}
+
+.header>.nav>a{
     color: white;
-    font-family: 'TAEBAEKmilkyway';
-    font-weight: bold;
+    text-decoration: none;
+}
+
+.header>.nav>a>.nav-title {
+    width: 150px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'HS-Regular';
 }
 
 /*main*/
-/* 섹션부분을 찾기 힘들 것 같다면 메인에 두어도 상관없음*/
-.main{}
+/* 섹션부분을 찾기 힘들것같다면 메인에 두어도 상관없음 */
+.main { }
 
-/*section 단위로 접근한다.*/
-
-/* 상단 이미지 초점 및 크기 조절 */
-.section1-wrap{
+/*section 단위로 접근*/
+.section1-wrap {
     width: 100%;
     min-height: 400px;
     height: 100vh;
-    background-color: brown;
     background-image: url(../img/rose-g8968e0cab_1920.jpg);
     background-size: cover;
     background-position: center;
@@ -93,59 +108,186 @@ section {
 .section1-wrap>.section1-title{
     color: white;
     text-align: right;
-    padding: 290px 20px 0 20px;
+    padding: 250px 20px 0 20px;
     text-shadow: 0 0 5px black;
     font-weight: bold;
 }
-
-/* 이미지 중앙에 있는 행사 이름을 좀더 크게*/
 .section1-wrap>.section1-title>h1{
     font-size: 3rem;
 }
-
-/* 행사 이름 밑의 정보를 조금 크게하고 글씨체를 바꾸고
-서로의 간격을 넓힌다.*/
-.section1-wrap>.section1-title>h3{
+.section1-wrap>.section1-title>h3 {
     font-family: 'TAEBAEKmilkyway';
     font-size: 1.5rem;
     margin: 10px 0;
 }
 
-/* section2 행사 설명*/
-/* 행사 설명과 행사 상세 정보가 적힌 section2에 
-전체적인 간격을 준다. margin이 아닌 padding으로 했지만
-margin도 괜찮지 않을까..*/
-.section2-intro{
+/* sention2 행사 설명*/
+.section2-intro {
     text-align: center;
-    padding: 60px;
+    padding: 60px 0;
     line-height: 120%;
-}
 
-.section2-intro>.intro-title{
-    font-size: 2rem;
-    /* intro title 내의 태그 줄 간격 벌리기*/
-    line-height: 120%;
-    font-family: 'HS-Regular';
-    margin-bottom: 10px;
 }
-
-.section2-intro>.intro-descript>h3{
+.section2-intro>.intro-title,
+.section2-intro>.intro-title>h1
+{
+    margin-bottom: 20px;
+}
+.section2-intro>.intro-title>h3 {
     font-family: 'TAEBAEKmilkyway';
-    font-weight: bold;
-    color: gray;
 }
 
-.section2-intro>.intro-descript>table{
+
+.section2-intro>.intro-descript>table {
     margin: auto;
     margin-top: 50px;
 }
-
-.section2-intro>.intro-descript>table tr td{
-    padding: 8px;
+.section2-intro>.intro-descript table tr td:first-child {
+    color: #2D3192;
+    padding: 5px 10px;
+    border-right: #2D3192 2px solid;
+    font-weight: bold;
+}
+.section2-intro>.intro-descript table tr td{
+    padding: 5px 10px;
 }
 
-.section2-intro>.intro-descript>table tr td:first-child{
-    border-right: #2D3192 solid 2px;
+/* section3 행사 이미지 */
+.section3-wrap {}
+.section3-wrap>.section3-gallery>.gallery-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+.section3-gallery>.gallery-title>a {
+    background-color: #2D3192;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 15px;
+}
+.section3-gallery>.gallery-title>a:hover {
+    background-color: #EB5D99;
+    transition: all 0.2s;
+}
+
+.section3-gallery>.gallery-board {
+    display: inline-block;
+    width: 280px;
+    height: 350px;
+    background-color: lightgray;
+    border-radius: 20px;
+    text-align: center;
+}
+.section3-gallery>.gallery-board>h4 {
     font-weight: bold;
-    color: #2D3192cc;
+}
+.section3-gallery>.gallery-board>.image-wrap {
+    width: 250px;
+    height: 250px;
+    margin: 15px;
+    overflow: hidden;
+}
+.section3-gallery>.gallery-board:hover .image{
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+/* section3 이미지 넣는 공간 */
+.section3-gallery>.gallery-board:nth-child(2) .image {
+    width: 250px;
+    height: 250px;
+    /*나중에 수정하기 위함*/
+    background-image: url();
+}
+.section3-gallery>.gallery-board:nth-child(3) .image {
+    width: 250px;
+    height: 250px;
+    /*나중에 수정하기 위함*/
+    background-image: url();
+}
+.section3-gallery>.gallery-board:nth-child(4) .image {
+    width: 250px;
+    height: 250px;
+    /*나중에 수정하기 위함*/
+    background-image: url();
+}
+
+/*section4 행사뉴스*/
+.section4-news {
+    padding: 60px 0;
+    height: 350px;
+}
+.section4-news>table {
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.section4-news>table tr td:first-child {
+    color: #2D3192;
+    font-weight: bolder; 
+    padding-right: 50px;
+}
+.section4-news>table tr td a{
+    color: black;
+    text-decoration: none;
+}
+.section4-news>table tr:hover td,
+.section4-news>table tr:hover td a
+{
+    color: #EB5D99;
+}
+
+
+.section4-news>table tr td {
+    padding: 15px 0 ;
+    border-top: #2D3192 2px solid;
+    border-bottom: #2D3192 2px solid;
+}
+
+/* footer */
+.footer { 
+    background-color:rgb(241, 241, 241);
+    padding: 15px 0;
+}
+.footer>.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer>.footer-content>.footer-info>p {
+    float: left;
+    padding-right: 50px;
+    padding-bottom:10px ;
+    color: gray;
+    font-size: 0.8rem;
+}
+.footer>.footer-content>.footer-info>p:last-child {
+    padding: 0;
+    clear: both;
+}
+
+/* Top 버튼*/
+.top-button {
+    position: fixed;
+    bottom: 10px; right: 10px;
+    width: 80px; height: 80px;
+    background-color: #2D3192;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding-top: 30px;
+    text-align: center;
+    transition: all 0.3s;
+}
+.top-button:hover {
+    background-color: #EB5D99;
+    transition: all 0.3s;
+}
+.top-button>a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
